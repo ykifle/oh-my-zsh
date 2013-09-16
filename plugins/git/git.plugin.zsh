@@ -125,4 +125,19 @@ function _git_log_prettily(){
   fi
 }
 alias glp="_git_log_prettily"
+
+install_gitconfig () {
+  source="$ZSH_CUSTOM/gitconfig.symlink"
+  dest="$HOME/.gitconfig"
+
+  if [ -f $dest ] || [ -d $dest ]
+  then
+    rm -rf $dest
+  fi
+
+  ln -s $source $dest
+}
+
+install_gitconfig
+
 compdef _git glp=git-log
