@@ -130,7 +130,7 @@ install_gitconfig () {
   source="$ZSH/plugins/git/gitconfig.symlink"
   dest="$HOME/.gitconfig"
 
-  if [ -f $dest ] || [ -d $dest ]
+  if [ -f $dest ] || [ -d $dest ] || [ -h $dest ]
   then
     rm -rf $dest
   fi
