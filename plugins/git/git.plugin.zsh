@@ -127,7 +127,7 @@ function _git_log_prettily(){
 alias glp="_git_log_prettily"
 
 install_gitconfig () {
-  source="$ZSH_CUSTOM/gitconfig.symlink"
+  source="$ZSH/plugins/git/gitconfig.symlink"
   dest="$HOME/.gitconfig"
 
   if [ -f $dest ] || [ -d $dest ]
